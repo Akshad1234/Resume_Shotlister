@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Hemo.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div id="container1">
+            <div id="hb1">
+                <div id="hlogo">
+                    <span id="hlogo-text">CodePandas</span>
+                </div>
+
+                <div id="hlinks">
+                    <a class="hancrs" href="#about">About</a>
+                    <a class="hancrs" href="{{ url_for('construction') }}">Update</a>
+                    <a class="hancrs" href="{{ url_for('construction') }}">Demo</a>
+                </div>
+            </div>
+
+            <div id="hb2">
+                <div id="hbs">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+
+                <div id="hbp">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="container2">
+            <div id="mb1">
+                <div id="mb1-b1">
+                    <div id="mheading" class="mcb1-b">
+                        <span id="mheading-text">Is Your <span id="mheading-text-hl">Resume</span> a Perfect Match for the Job? Find Out Now!</span>
+                    </div>
+
+                    <div id="mparagraph" class="mcb1-b">
+                        <span id="mparagraph-text">Not sure if your <span id="mparagraph-text-hl">Resume</span> is strong enough for the job you're applying for? Our AI-powered Resume Shortlister evaluates your resume, provides a score, and offers actionable insights to improve it. Get expert recommendations and boost your chances of landing interviews!</span>
+                    </div>
+
+                    <div id="mbtn" class="mcb1-b">
+                        <a class="mancrs" href="{{ url_for('login') }}">
+                            <div id="mshortl-btn">
+                                <span id="mshortl-text">ShortList</span>
+                            </div>
+                        </a>
+
+                        <a class="mancrs" href="{{ url_for('login') }}">
+                            <div id="mlogin-btn">
+                                <span id="mlogin-text">Login</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="mb1-b2">
+                    <img id="mresume-img" src="{{ url_for('static', filename='image/resume.avif') }}" alt="Resume Image">
+                </div>
+            </div>
+
+            <div id="mb2">
+                <section id="about">
+                    <h2 id="aheading">About <span id="alogo">CodePandas</span></h2>
+                    <br><br>
+                    <p>CodePandas is an AI-powered platform designed to help job seekers optimize their resumes. Our Resume Shortlister evaluates your resume, provides a score, and offers actionable insights to improve your chances of landing your dream job.</p>
+                    <br>
+                    <p>We believe in empowering individuals with the right tools to enhance their professional journey. Whether you’re a student, a fresh graduate, or an experienced professional, our AI-driven solutions ensure that your resume stands out to recruiters.</p>
+                    <br>
+                    <p>Join us and take the first step toward a successful career!</p>
+                </section>
+            </div>
+
+            <div id="mb3">
+                <div id="mb3-heading">
+                    <div id="feedback">
+                        <span id="feedback-heading">Feedback</span>
+                    </div>
+                </div>
+
+                <form id="mb3-typing" action="action.php">
+                    <div id="mb3-typing-border">
+                        <input id="mb3-typing-box" type="text" placeholder="Type Feedback....">
+                    </div>
+                </form>
+
+                <div id="mb3-btn-box">
+                    <button id="mb3-btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="container3">
+            <div id="footer-icon" class="icons">
+                <a href="{{ url_for('construction') }}" class="icon linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="{{ url_for('construction') }}" class="icon github"><i class="fa-brands fa-github"></i></a>
+                <a href="{{ url_for('construction') }}" class="icon twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="member">
+                <p><strong>Member:</strong> Punam Khedikar, Anamika Patil, Akshad Aloni, Sarang Khandate</p>
+            </div>
+            <div class="college">
+                <p><strong>College:</strong> Suryodaya College of Engineering & Technology</p>
+            </div>
+            <div class="year">
+                <p><strong>Year:</strong> 2nd</p>
+            </div>
+            <div class="department">
+                <p><strong>Department:</strong> CSE [Data Science]</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

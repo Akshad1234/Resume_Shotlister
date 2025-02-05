@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div id="container1">
+            <div id="hb1">
+                <div id="hlogo">
+                    <span id="hlogo-text">CodePandas</span>
+                </div>
+
+                <div id="hlinks">
+                    <a class="hancrs" href="home.html">About</a>
+                    <a class="hancrs" href="home.html">Update</a>
+                    <a class="hancrs" href="home.html">Demo</a>
+                </div>
+            </div>
+
+            <div id="hb2">
+                <div id="hbs">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+
+                <div id="hbp">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="container2">
+            <div id="mb1">
+                <span id="text-heading">Optimize Your <span id="mheading-text-hl">Resume</span> for Success – Get Instant Feedback!</span>
+            </div>
+
+            <div id="mb2">
+                <div id="login">
+                    <span id="login-h-text">Login</span>
+                </div>
+
+                <form id="main-input">
+                    <div id="input-box">
+                        <input id="username" type="text" placeholder="Username" required>
+                        <input id="password" type="password" placeholder="Password" required>
+                    </div>
+                </form>
+
+                <div id="mb2-btn">
+                    <button id="submit-btn" onclick="validateLogin()">Continue</button>
+                    <a id="create-link" href="construction.html">
+                        <div id="create">
+                            <span id="create-btn">Create</span>
+                        </div>
+                    </a>
+                </div>
+                <p id="error-message" style="color: red; display: none;">Invalid username or password</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div id="container3">
+            <div id="footer-icon" class="icons">
+                <a href="construction.html" class="icon linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="construction.html" class="icon github"><i class="fa-brands fa-github"></i></a>
+                <a href="construction.html" class="icon twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="member">
+                <p><strong>Member:</strong>Punam Khedikar, Anamika Patil, Akshad Aloni, Sarang Khandate</p>
+            </div>
+            <div class="college">
+                <p><strong>College:</strong> Suryodaya College of Engineering & Technology</p>
+            </div>
+            <div class="year">
+                <p><strong>Year:</strong> 2nd</p>
+            </div>
+            <div class="department">
+                <p><strong>Department:</strong> CSE [Data Science]</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorMessage = document.getElementById("error-message");
+
+            if (username === "admin" && password === "password123") {
+                window.location.href = "{{ url_for('selection') }}";
+            } else {
+                errorMessage.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

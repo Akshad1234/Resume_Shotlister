@@ -1,0 +1,219 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial,sans-serif;
+}
+
+#container1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-bottom: 1px solid black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    border-bottom: 1px solid black;
+}
+
+#hb1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+}
+
+#hb2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 5%;
+    margin-right: 60px;
+}
+
+/*H Logo*/
+
+#hlogo{
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 60%;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hlogo-text{
+    font-size: 1.5em;
+    font-weight: 700;
+    background: url("https://images.unsplash.com/photo-1579547621700-03c2c337370a?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29sb3VyZnVsfGVufDB8fDB8fHww") no-repeat center;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: cover;
+}
+
+/*H ancrs*/
+
+.hancrs{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+#hlinks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+    width: 50%;
+}
+
+/*HB2*/
+
+.fa-gears,.fa-user{
+    font-size: 1.2em;
+}
+
+/*Main section*/
+
+#container2{
+    margin-top: 60px;
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: auto;
+    border-bottom: 1px solid black;
+    padding-bottom: 250px;
+}
+
+/*MB1*/
+
+#mb1{
+    height: 100%;
+    width: 55%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+#login{
+
+    height: 100%;
+}
+
+#text-heading{
+    font-size: 3em;
+    font-weight: 700;
+}
+
+#mheading-text-hl{
+    background: url("https://images.unsplash.com/photo-1579547621700-03c2c337370a?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29sb3VyZnVsfGVufDB8fDB8fHww") no-repeat center;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: cover;
+}
+
+/*MB2*/
+
+#mb2{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 25%;
+    border: 2px solid black;
+    padding: 20px 30px 20px 30px;
+    border-radius: 10px;
+}
+
+#login-h-text{
+    font-size: 1.7em;
+    font-weight: 600;
+}
+
+#input-box{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#id-input-box{
+    height: 30px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black;
+    font-size: 1em;
+}
+
+#password-input-box{
+    height: 30px;
+    padding-left: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#mb2-btn{
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#submit-link,#create-link{
+    text-decoration: none;
+}
+
+#submit-btn{
+    font-size: 1.2em;
+    font-weight: 600;
+    background: url("https://images.unsplash.com/photo-1579547621700-03c2c337370a?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29sb3VyZnVsfGVufDB8fDB8fHww") no-repeat center;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: cover;
+}
+
+#create-btn{
+    font-size: 1.2em;
+    font-weight: 600;
+    background: url("https://images.unsplash.com/photo-1579547621700-03c2c337370a?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29sb3VyZnVsfGVufDB8fDB8fHww") no-repeat center;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: cover;
+}
+
+/*Footer section*/
+
+#container3{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footer-icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10%;
+    padding-bottom: 20px;
+}
+
+.fa-linkedin-in,.fa-github,.fa-x-twitter{
+    font-size: 1.5em;
+    color: black;
+}

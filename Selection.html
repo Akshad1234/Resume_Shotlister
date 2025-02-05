@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection-page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Selection.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div id="container1">
+            <div id="hb1">
+                <div id="hlogo">
+                    <span id="hlogo-text">CodePandas</span>
+                </div>
+                <div id="hlinks">
+                    <a class="hancrs" href="#">About</a>
+                    <a class="hancrs" href="#">Update</a>
+                    <a class="hancrs" href="#">Demo</a>
+                </div>
+            </div>
+            <div id="hb2">
+                <div id="hbs">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+                <div id="hbp">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="container2">
+            <div id="mb1">
+                <div id="inputheading">
+                    <span id="inputheading-text">Resume Shortlister</span>
+                </div>
+                <div id="inputbox">
+                    <span id="inputbox-heading">File Upload</span>
+                    <form id="mainform">
+                        <label for="fileupload" class="c-f-u">Upload File</label>
+                        <input type="file" id="fileupload">
+                        <button type="submit" id="submit-btn">Submit</button>
+                    </form>
+                    <p id="upload-status"></p> <!-- Status Message -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="container3">
+            <div id="footer-icon" class="icons">
+                <a href="#" class="icon linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="icon github"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="icon twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="member">
+                <p><strong>Member:</strong> Punam Khedikar, Anamika Patil, Akshad Aloni, Sarang Khandate</p>
+            </div>
+            <div class="college">
+                <p><strong>College:</strong> Suryodaya College of Engineering & Technology</p>
+            </div>
+            <div class="year">
+                <p><strong>Year:</strong> 2nd</p>
+            </div>
+            <div class="department">
+                <p><strong>Department:</strong> CSE [Data Science]</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("mainform").addEventListener("submit", async function (e) {
+            e.preventDefault();
+        
+            let fileInput = document.getElementById("fileupload");
+            let status = document.getElementById("upload-status");
+        
+            if (fileInput.files.length === 0) {
+                status.innerHTML = "Please select a file!";
+                status.style.color = "red";
+                return;
+            }
+        
+            let formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+        
+            try {
+                const response = await fetch("/upload", { method: "POST", body: formData });
+                const result = await response.json();
+        
+                if (response.ok) {
+                    let keywordList = result.matched_keywords.length ? result.matched_keywords.join(", ") : "None";
+                    status.innerHTML = `
+                        <strong>Upload Successful!</strong><br>
+                        <strong>Status:</strong> ${result.status}<br>
+                        <strong>Matched Keywords:</strong> ${keywordList}<br>
+                        <strong>ATS Compliance:</strong> ${result.ats_compliance}
+                    `;
+                    status.style.color = "green";
+                } else {
+                    status.innerHTML = "Upload failed: " + result.message;
+                    status.style.color = "red";
+                }
+            } catch (error) {
+                status.innerHTML = "Error uploading file!";
+                status.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
